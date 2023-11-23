@@ -55,6 +55,18 @@ build CMakeFiles/workshop4_1.dir/main.cpp.obj: CXX_COMPILER__workshop4_1_unscann
   OBJECT_DIR = CMakeFiles\workshop4_1.dir
   OBJECT_FILE_DIR = CMakeFiles\workshop4_1.dir
 
+build CMakeFiles/workshop4_1.dir/lib/Recepteur.cpp.obj: CXX_COMPILER__workshop4_1_unscanned_Debug C$:/Users/matth/CLionProjects/workshop4.1/lib/Recepteur.cpp || cmake_object_order_depends_target_workshop4_1
+  DEP_FILE = CMakeFiles\workshop4_1.dir\lib\Recepteur.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\workshop4_1.dir
+  OBJECT_FILE_DIR = CMakeFiles\workshop4_1.dir\lib
+
+build CMakeFiles/workshop4_1.dir/lib/Emetteur.cpp.obj: CXX_COMPILER__workshop4_1_unscanned_Debug C$:/Users/matth/CLionProjects/workshop4.1/lib/Emetteur.cpp || cmake_object_order_depends_target_workshop4_1
+  DEP_FILE = CMakeFiles\workshop4_1.dir\lib\Emetteur.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\workshop4_1.dir
+  OBJECT_FILE_DIR = CMakeFiles\workshop4_1.dir\lib
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target workshop4_1
@@ -63,7 +75,7 @@ build CMakeFiles/workshop4_1.dir/main.cpp.obj: CXX_COMPILER__workshop4_1_unscann
 #############################################
 # Link the executable workshop4_1.exe
 
-build workshop4_1.exe: CXX_EXECUTABLE_LINKER__workshop4_1_Debug CMakeFiles/workshop4_1.dir/main.cpp.obj
+build workshop4_1.exe: CXX_EXECUTABLE_LINKER__workshop4_1_Debug CMakeFiles/workshop4_1.dir/main.cpp.obj CMakeFiles/workshop4_1.dir/lib/Recepteur.cpp.obj CMakeFiles/workshop4_1.dir/lib/Emetteur.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\workshop4_1.dir

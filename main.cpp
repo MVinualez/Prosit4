@@ -1,67 +1,28 @@
 #include <iostream>
 #include <string>
+#include "lib/Recepteur.h"
+#include "lib/Emetteur.h"
 
 using namespace std;
 
-class recepteur {
-public:
-    void handleMessage(const string& message) {
-        cout << "Instance de recepteur : " << message << endl;
-    }
-};
-
-class emetteur {
-public:
-    typedef void (recepteur::*MessageHandler)(const string&);
-
-    emetteur() : instances(nullptr), handlers(nullptr), instancesCount(0) {}
-
-    void registerInstance(recepteur* instance, MessageHandler handler) {
-        recepteur** newInstances = new recepteur*[instancesCount + 1];
-        MessageHandler* newHandlers = new MessageHandler[instancesCount + 1];
-
-        for (int i = 0; i < instancesCount; ++i) {
-            newInstances[i] = instances[i];
-            newHandlers[i] = handlers[i];
-        }
-
-        newInstances[instancesCount] = instance;
-        newHandlers[instancesCount] = handler;
-
-        instances = newInstances;
-        handlers = newHandlers;
-        instancesCount++;
-    }
-
-    void sendMessage(const string& message) {
-        for (int i = 0; i < instancesCount; ++i) {
-            (instances[i]->*handlers[i])(message);
-        }
-    }
-
-    ~emetteur() {
-        delete[] instances;
-        delete[] handlers;
-    }
-
-private:
-    recepteur** instances;
-    MessageHandler* handlers;
-    int instancesCount;
-};
 
 int main() {
-    recepteur* r1 = new recepteur;
-    recepteur* r2 = new recepteur;
-    recepteur* r3 = new recepteur;
+    Recepteur* r1 = new Recepteur("Rodrigo");
+    Recepteur* r2 = new Recepteur("Roberta");
+    Recepteur* r3 = new Recepteur("Hubert");
+    Recepteur* r4 = new Recepteur("Jason");
 
-    emetteur e;
+    Emetteur*  e = new Emetteur();
 
-    e.registerInstance(r1, &recepteur::handleMessage);
-    e.registerInstance(r2, &recepteur::handleMessage);
-    e.registerInstance(r3, &recepteur::handleMessage);
+    e->registerInstance(r1, &Recepteur::handleMessage);
+    e->registerInstance(r2, &Recepteur::handleMessage);
+    e->registerInstance(r3, &Recepteur::handleMessage);
 
-    e.sendMessage("Bonjour!");
+    e->sendMessage("Bonjour!");
+
+    e->registerInstance(r4, &Recepteur::handleMessage);
+
+    e->sendMessage("Bienvenue!");
 
     delete r1;
     delete r2;
