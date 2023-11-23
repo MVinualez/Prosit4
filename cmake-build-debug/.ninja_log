@@ -1,0 +1,7 @@
+# ninja log v5
+3	388	7224380866121874	CMakeFiles/workshop4_1.dir/main.cpp.obj	750452d47cde401b
+403	542	7224366973624512	workshop4_1.exe	1b70f9d60d95487a
+27	590	7224377804462760	CMakeFiles/workshop4_1.dir/lib/recepteur.cpp.obj	d7aa147b115637f4
+10	444	7224378194878063	CMakeFiles/workshop4_1.dir/lib/emetteur.cpp.obj	4789b438a5f25e1d
+1	190	7224381076391861	build.ninja	dd8382edd725dbac
+3	185	7224381078634778	workshop4_1.exe	1b70f9d60d95487a
