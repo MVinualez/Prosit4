@@ -10,7 +10,7 @@ int main() {
     Recepteur* r1 = new Recepteur("Rodrigo");
     Recepteur* r2 = new Recepteur("Roberta");
     Recepteur* r3 = new Recepteur("Hubert");
-    Recepteur* r4 = new Recepteur("Jason");
+    Recepteur* r4 = new Recepteur("Jacques");
 
     Emetteur*  e = new Emetteur();
 
