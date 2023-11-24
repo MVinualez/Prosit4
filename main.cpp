@@ -1,4 +1,3 @@
-#include <iostream>
 #include <string>
 #include "lib/Recepteur.h"
 #include "lib/Emetteur.h"
